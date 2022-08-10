@@ -44,7 +44,7 @@ $ mysql -v
 -----------------------------------------------------------------
 ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
 ```
-I get error message. For resolve make next
+I get error message. To solve do the following
 ```
 $ brew services stop mysql
 $ sudo pkill mysqld
@@ -60,7 +60,14 @@ mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'secret';
 -----------------------------------------------------------------
 Query OK, 0 rows affected (0.12 sec)
 ```
-To exit mysql type
+After setting the password to open mysql cli, need to type
+```
+$ mysql -u root -p
+-----------------------------------------------------------------
+Enter password: 
+Welcome to the MySQL monitor.  ...
+```
+To exit mysql cli type
 ```
 mysql> exit;
 -----------------------------------------------------------------
