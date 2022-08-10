@@ -1,10 +1,10 @@
-# How
+# How to install mySQL on MacOs with Homebrew
 
 ```
 brew install mysql
 ```
 
-After install check mysql version
+After install check mysql version and remember the path
 
 ```
 $ brew info mysql
@@ -24,7 +24,7 @@ $ brew services start mysql
 Starting MySQL
  SUCCESS! 
 ```
-Create new alias for `mysql`
+Create new alias for `mysql` if need
 ```
 $ nano ~/.bash_profile
 ```
@@ -54,7 +54,7 @@ $ mysql -uroot
 -----------------------------------------------------------------
 mysql>
 ```
-Now set new password
+Set new password for root
 ```
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'secret';
 -----------------------------------------------------------------
