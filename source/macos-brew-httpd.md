@@ -1,44 +1,37 @@
-# How to install `mySQL` on `MacOs` with `Homebrew`
+# How to install myphpadmin (httpd) on MacOs with Homebrew
+
+To install myphpadmin at first you need to install `php` and `httpd` with homebrew
+
+How to install php on MasOs with Homebrew
+How to install httpd on MasOs with Homebrew
 
 ```
-brew install mysql
+brew install httpd
 ```
 
-After install check `mysql` version and remember the path
+After install check mysql version and remember the paths
 
 ```
-$ brew info mysql
+$ brew info httpd
 -----------------------------------------------------------------
-mysql: stable 8.0.30 (bottled)
+httpd: stable 2.4.54 (bottled)
 ...
-/usr/local/Cellar/mysql/8.0.30 (312 files, 297MB) *
+/usr/local/Cellar/httpd/2.4.54 (1,662 files, 31.8MB) *
+...
+DocumentRoot is /usr/local/var/www.
+...
+The default ports have been set in /usr/local/etc/httpd/httpd.conf to 8080
 ...
 ```
+
+Сonfig file is located `/usr/local/etc/httpd/httpd.conf`
 
 To start server
 
 ```
-$ brew services start mysql
+$ brew services start httpd
 -----------------------------------------------------------------
-==> Successfully started `mysql` (label: homebrew.mxcl.mysql)
-```
-
-Create new alias for `mysql` if needed
-
-```
-$ nano ~/.bash_profile
-```
-
-Add new row
-
-```
-alias mysql=/usr/local/Cellar/mysql/8.0.30/bin/mysql
-```
-
-To save and exit from nano press `Ctrl+X` `Y` `Enter`
-
-```
-$ source ~/.bash_profile
+==> Successfully started `httpd` (label: homebrew.mxcl.httpd)
 ```
 
 Now we can type 
@@ -61,7 +54,7 @@ $ mysql -uroot
 mysql>
 ```
 
-Set new password for `root`
+Set new password for root
 
 ```
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'secret';
@@ -69,19 +62,20 @@ mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'secret';
 Query OK, 0 rows affected (0.12 sec)
 ```
 
-After setting the password to open `mysql` cli, need to type
+After setting the password to open mysql cli, need to type
 
 ```
 $ mysql -u root -p
 -----------------------------------------------------------------
 Enter password: 
-Welcome to the MySQL monitor.  ...
+Welcome to the MySQL monitor. ...
 ```
 
-To exit `mysql` cli just type
+To exit mysql cli type
 
 ```
 mysql> exit;
 -----------------------------------------------------------------
 Bye
 ```
+[1]<>
